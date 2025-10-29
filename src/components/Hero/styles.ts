@@ -1,4 +1,7 @@
-.form {
+import styled from "styled-components";
+import { Props } from ".";
+
+export const HeroForm = styled.form`
   height: 360px;
   width: 100%;
   background-image: url('https://cdn.pixabay.com/photo/2018/08/10/15/45/woman-3597101_1280.jpg');
@@ -6,9 +9,8 @@
   position: relative;
   display: flex;
   align-items: center;
-}
 
-.form::before {
+  &::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -19,23 +21,18 @@
   opacity: 0.7;
 }
 
-.form div {
+@media (max-width: 768px) {
+  height: auto;
+  padding: 24px 0;
+  font-size: 32px;
+}
+`
+export const HeroDiv = styled.div`
   position: relative;
   color: #eee;
-}
+`
 
-.heroTitle {
+export const HeroTitle = styled.h2<Props>`
   font-family: Gloock, serif;
-  font-size: 48px;
-}
-
-@media (max-width: 768px) {
-  .form {
-    height: auto;
-    padding: 24px 0;
-  }
-
-  .heroTitle {
-    font-size: 32px;
-  }
-}
+  font-size: ${(props) => props.fontSize ? props.fontSize + 'px' : '48px'};
+`
