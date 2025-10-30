@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Props } from ".";
+import cores from "../../cores/styleCores";
 
 export const HeroForm = styled.form`
   height: 360px;
@@ -10,13 +11,13 @@ export const HeroForm = styled.form`
   display: flex;
   align-items: center;
 
-  &::before {
+  &:before {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--cor-principal);
+  background-color: ${cores.corPrincipal};
   content: '';
   opacity: 0.7;
 }
